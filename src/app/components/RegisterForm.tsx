@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import { FaApple, FaFacebookF } from "react-icons/fa";
+
 import { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
+
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
