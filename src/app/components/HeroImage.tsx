@@ -8,7 +8,7 @@ export default function HeroImage() {
                alt="Background"
                layout="fill"
                objectFit="contain"
-               className=""
+               className=" "
              />
     </div>);
   }

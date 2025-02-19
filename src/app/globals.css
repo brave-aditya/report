@@ -35,36 +35,38 @@ body {
 
  .falling-circles-container {
   width: 100%;
-  height: 100%; /* Or a specific height */
-  overflow: hidden; /* Hide circles that fall off-screen */
-  position: relative; /* Needed for absolute positioning of circles */
+  height: 100%;
+  position: relative;
+  overflow: hidden; /* Clip circles at the rounded corners */
+  border-radius: 50px 50px 0 0; /* Match the rounded corners of the parent container */
 }
 
 .falling-circle {
-  background: hsl(0, 0%, 99%);
-  box-shadow: 0 0 15px 10px hsla(305, 97%, 47%, 0.71);
-  border-radius: 50%;
   position: absolute;
-  margin-top: -50px; /* Initial position above the container */
+  background: hsl(0, 0%, 99%);
+  box-shadow: 0 0 15px 10px hsla(305, 98%, 51%, 0.71);
+  border-radius: 50%;
+  animation-fill-mode: both;
 }
 
 @keyframes fall {
   0% {
-    transform: scale(0);
+    transform: translateY(0) scale(1);
+    opacity: 0;
   }
-  2% {
-    transform: scale(1);
-    top: -50px;
+  20% {
+    transform: translateY(-80%) scale(1);
+    opacity: 1;
   }
-  50% {
-    transform: scale(0.7);
+  90% {
+    opacity: 0.8;
+    
   }
   100% {
-    transform: scale(0.1);
-    top: 105%;
+    transform: translateY(100vh) scale(0.3);
+    opacity: 0.5;
   }
 }
-
 
   .no-scrollbar {
       -ms-overflow-style: none;  /* IE and Edge */

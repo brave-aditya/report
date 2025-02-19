@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div className="h-screen min-h-screen pt-4 lg:pt-10 px-4 lg:px-12 relative">
       
-      <div className="flex flex-col lg:flex-row justify-center items-center border-[4px] border-yellow-400 h-full w-full rounded-[50px] rounded-b-none border-b-0 bg-purple-200 opacity-90 relative animated-container">
+      <div className="flex flex-col lg:flex-row justify-center items-center border-[4px] border-yellow-400 h-full w-full rounded-[50px] rounded-b-none border-b-0 bg-gray-600 opacity-90 relative overflow-hidden">
       <div className="absolute inset-0">
         <FallingCircles />
       </div>
