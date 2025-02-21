@@ -6,11 +6,9 @@ import FallingCircles from "./components/FallingCircles";
 
 const HomePage = () => {
   return (
-    <div className="h-screen min-h-screen pt-4 lg:pt-10 px-4 lg:px-12 relative">
-      {/* Main Container */}
-      <div className="flex flex-col lg:flex-row justify-center items-center border-4 border-yellow-400 h-full w-full rounded-[50px] rounded-b-none border-b-0 bg-gray-800/90 relative overflow-hidden pb-8 lg:pb-0 ">
+    
+      <div className="flex flex-col lg:flex-row justify-center items-center h-full w-full bg-gray-800/90 relative ">
         
-        {/* Falling Circles Animation */}
         <div className="absolute inset-0">
           <FallingCircles />
         </div>
@@ -45,7 +43,6 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
