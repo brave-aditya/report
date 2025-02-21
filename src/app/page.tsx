@@ -1,38 +1,35 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import HeroImage from "./components/HeroImage";
 import FallingCircles from "./components/FallingCircles";
 
 const HomePage = () => {
-  const router = useRouter();
-  const [userRole, setUserRole] = useState(null);
+  const [dashboardUrl, setDashboardUrl] = useState("/student-dashboard");
 
   useEffect(() => {
-    // Get user role from localStorage
-    const role = localStorage.getItem("userRole");
-    setUserRole(role);
+    // Fetch user role from localStorage
+    const userRole = localStorage.getItem("userRole");
+
+    // Determine the dashboard URL based on the user's role
+    switch (userRole) {
+      case "admin":
+        setDashboardUrl("/admin-dashboard");
+        break;
+      case "parent":
+        setDashboardUrl("/parent-dashboard");
+        break;
+      case "teacher":
+        setDashboardUrl("/teacher-dashboard");
+        break;
+      default:
+        setDashboardUrl("/student-dashboard");
+    }
   }, []);
-
-  const handleDashboardClick = (e) => {
-    e.preventDefault();
-    
-    // Default to student dashboard if no role is found
-    const dashboardRoutes = {
-      admin: "/admin-dashboard",
-      teacher: "/teacher-dashboard",
-      parent: "/parent-dashboard",
-      student: "/student-dashboard"
-    };
-
-    const route = userRole ? dashboardRoutes[userRole.toLowerCase()] : "/student-dashboard";
-    router.push(route);
-  };
 
   return (
     <div className="h-screen min-h-screen pt-4 lg:pt-10 px-4 lg:px-12 relative">
-      <div className="flex flex-col lg:flex-row justify-center items-center h-full w-full bg-gray-800/90 relative border-4 border-yellow-400 rounded-[50px] rounded-b-none border-b-0 overflow-hidden pb-8 lg:pb-0">
+      <div className="flex flex-col lg:flex-row justify-center items-center h-full w-full bg-gray-800/90 relative border-4 border-yellow-400 rounded-[50px] rounded-b-none border-b-0 overflow-hidden pb-12 lg:pb-0">
         <div className="absolute inset-0">
           <FallingCircles />
         </div>
@@ -64,20 +61,18 @@ const HomePage = () => {
             with just a click!
           </p>
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
-            <button
-              onClick={handleDashboardClick}
+            <Link
+              href={dashboardUrl}
               className="bg-black hover:bg-gray-900 text-white font-semibold py-3 px-8 transition-all duration-300 hover:scale-105 border-2 border-white rounded-full shadow-lg text-center"
             >
               Continue to Dashboard →
-            </button>
-            <a
+            </Link>
+            <Link
               href="https://aditya-swart.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
               className="bg-white hover:bg-gray-100 text-black font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 border-2 border-black shadow-lg text-center"
             >
               View Portfolio →
-            </a>
+            </Link>
           </div>
         </div>
       </div>
