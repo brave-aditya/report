@@ -57,8 +57,8 @@ const tooltipStyle = {
 
 // Performance Bar Chart
 export const Performance: React.FC<PerformanceProps> = ({ subjects }) => (
-  <div className="w-full h-full text-white bg-white/5 backdrop-blur-md border-2 border-yellow-400 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden flex flex-col">
-    <h2 className="text-xl font-semibold mb-4 text-white/90">Subject Performance</h2>
+  <div className="w-full h-[350px] text-white bg-white/5 backdrop-blur-md border-2 border-yellow-400 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden flex flex-col">
+    <h2 className="text-xl font-semibold mb-4 text-white/90 text-center">Subject Performance</h2>
     <div className="flex-grow w-full min-h-[250px]">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={subjects}>
@@ -86,8 +86,8 @@ export const Performance: React.FC<PerformanceProps> = ({ subjects }) => (
 
 // Comparison Line Chart
 export const ComparisonLineChart: React.FC<ComparisonLineChartProps> = ({ data }) => (
-  <div className="w-full h-full text-white bg-white/5 backdrop-blur-md border-2 border-yellow-400 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden flex flex-col">
-    <h2 className="text-xl font-semibold mb-4 text-white/90">Marks Comparison</h2>
+  <div className="w-full h-[350px] text-white bg-white/5 backdrop-blur-md border-2 border-yellow-400 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden flex flex-col">
+    <h2 className="text-xl font-semibold mb-4 text-white/90 text-center">Marks Comparison</h2>
     <div className="flex-grow w-full min-h-[250px]">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
@@ -145,8 +145,8 @@ export const ComparisonLineChart: React.FC<ComparisonLineChartProps> = ({ data }
 
 // Monthly Progress Bar Chart
 export const ProgressChart: React.FC<ProgressChartProps> = ({ data }) => (
-  <div className="w-full h-full text-white bg-white/5 backdrop-blur-md border-2 border-yellow-400 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden flex flex-col">
-    <h2 className="text-xl font-semibold mb-4 text-white/90">Monthly Progress</h2>
+  <div className="w-full h-[350px] text-white bg-white/5 backdrop-blur-md border-2 border-yellow-400 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden flex flex-col">
+    <h2 className="text-xl font-semibold mb-4 text-white/90 text-center">Monthly Progress</h2>
     <div className="flex-grow w-full min-h-[250px]">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data}>

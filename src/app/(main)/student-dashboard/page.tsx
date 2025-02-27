@@ -66,7 +66,7 @@ const ComplaintRequest: React.FC = () => {
   return (
     <div className="backdrop-blur-lg bg-white/10 border-2 border-yellow-400 rounded-3xl shadow-xl overflow-hidden">
       <div className="pb-2">
-        <h2 className="text-xl font-semibold text-white/90 px-4 pt-4">
+        <h2 className="text-xl font-semibold text-white/90 px-4 pt-4 text-center">
           Complaint/Request
         </h2>
       </div>
@@ -110,14 +110,14 @@ const ComplaintRequest: React.FC = () => {
                 id="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full px-3 py-2 bg-white/10 border border-yellow-400/50 rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-yellow-400/70 min-h-24"
+                className="w-full px-3 py-2 bg-white/10 border border-yellow-400 rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-yellow-400/70 min-h-24"
                 placeholder="Describe your complaint or request"
                 required
               />
             </div>
             <button
               type="submit"
-              className="w-full py-2 px-4 bg-yellow-500/60 hover:bg-yellow-500/80 border-2 border-yellow-400 rounded-lg text-white font-medium transition-colors duration-200 flex items-center justify-center gap-2"
+              className="w-full py-2 px-4  hover:bg-yellow-500/80 border-2 border-yellow-400 rounded-full text-white font-medium transition-colors duration-200 flex items-center justify-center gap-2"
             >
               <FiSend className="text-lg" />
               Send Message

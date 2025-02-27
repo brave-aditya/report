@@ -113,7 +113,7 @@ const StatItem: React.FC<StatItemProps> = ({ icon, title, value }) => (
 // ✅ Achievements Component
 export const Achievements: React.FC<AchievementsProps> = ({ achievements }) => (
   <div className="w-full text-white bg-white/5 backdrop-blur-md border-2 border-yellow-400 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
-    <h2 className="text-xl font-semibold mb-6 text-white/90 relative z-10">
+    <h2 className="text-xl font-semibold mb-6 text-white/90 relative z-10 text-center">
       Recent Achievements
     </h2>
 
