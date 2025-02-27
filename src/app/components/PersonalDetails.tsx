@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { FiAward, FiBook, FiClock, FiPercent } from "react-icons/fi";
 
 // ✅ Define the types properly
@@ -46,9 +47,11 @@ export const Header: React.FC<HeaderProps> = ({ name }) => (
     </div>
 
     <div className="absolute bottom-0 right-0 sm:w-[40%] w-[35%]">
-      <img
-        src="pfp.png"
+      <Image
+        src="/pfp.png"
         alt="Student"
+        width={500}
+        height={300}
         className="shadow-lg rounded-tl-3xl border-2 border-b-0 border-r-0 border-yellow-400 z-10"
       />
     </div>

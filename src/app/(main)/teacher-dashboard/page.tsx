@@ -27,7 +27,7 @@ const StudentDashboard = () => {
         <h1 className="text-3xl lg:text-4xl font-bold text-white bg-gray-900/50 p-4 rounded-lg">
           Welcome back, {student.name}!
         </h1>
-        <p className="text-lg text-gray-400 bg-gray-900/40 p-2 rounded-lg">Here's your academic summary.</p>
+        <p className="text-lg text-gray-400 bg-gray-900/40 p-2 rounded-lg">Here&apos;s your academic summary.</p>
       </div>
 
       {/* Academic Progress Overview */}
@@ -78,7 +78,7 @@ const StudentDashboard = () => {
 
       {/* Motivational Quote */}
       <div className="bg-blue-700/80 p-6 rounded-lg shadow text-white text-center">
-        <p className="text-xl italic">"Success is the sum of small efforts, repeated day in and day out."</p>
+        <p className="text-xl italic">&quot;Success is the sum of small efforts, repeated day in and day out.&quot;</p>
         <p className="text-lg mt-2">– Robert Collier</p>
       </div>
     </div>

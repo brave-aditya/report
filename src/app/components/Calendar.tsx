@@ -69,7 +69,7 @@ const SimpleCalendar: React.FC<{ examDates: string[]; month?: number; year?: num
 
   const changeMonth = (direction: "next" | "prev") => {
     setSelectedMonth((prev) => {
-      let newMonth = direction === "next" ? prev + 1 : prev - 1;
+      const newMonth = direction === "next" ? prev + 1 : prev - 1;
       if (newMonth < 0) {
         setSelectedYear((prevYear) => prevYear - 1);
         return 11;

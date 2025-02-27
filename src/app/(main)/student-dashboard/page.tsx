@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FiAward, FiSend } from "react-icons/fi";
+import { FiSend } from "react-icons/fi";
 import { Header, Stats, Achievements } from "@/app/components/PersonalDetails";
 import {
   ProgressChart,
