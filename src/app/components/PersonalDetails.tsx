@@ -1,7 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { MdOutlineEdit } from "react-icons/md";
 import { FiAward, FiBook, FiClock, FiPercent } from "react-icons/fi";
 
 // ✅ Define the types properly
@@ -34,9 +36,18 @@ interface AchievementsProps {
 export const Header: React.FC<HeaderProps> = ({ name }) => (
   <div className="w-full text-white bg-white/5 backdrop-blur-md border-2 border-yellow-400 rounded-3xl aspect-[5/4] relative p-6 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
     <div className="flex flex-col justify-between items-start h-full z-10 relative">
-      <button className="w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-8 transition-all duration-300 hover:scale-105 border-2 border-yellow-400 rounded-full shadow-lg text-center">
-        Welcome back
-      </button>
+      <div className="relative w-full group">
+        <button className="w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-8 transition-all duration-300 hover:scale-105 border-2 border-yellow-400 rounded-full shadow-lg text-center pr-24">
+          Welcome back
+        </button>
+
+        <Link href="/edit" passHref>
+          <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-black hover:bg-yellow-300 text-white font-semibold py-1.5 px-3 transition-all duration-300 hover:scale-105 border-2 border-yellow-400 rounded-full shadow-lg text-center flex items-center gap-2 text-sm group-hover:bg-yellow-300">
+          <MdOutlineEdit className="text-white text-lg"/>
+            <span className="hidden sm:inline">Edit</span>
+          </button>
+        </Link>
+      </div>
 
       <div>
         <h1 className="text-4xl font-bold bg-gradient-to-r from-yellow-300 to-pink-500 bg-clip-text text-transparent drop-shadow-sm max-w-[65%]">
@@ -77,8 +88,10 @@ export const Stats: React.FC<StatsProps> = ({ student }) => (
         value={
           student.subjects.length > 0
             ? Math.round(
-                student.subjects.reduce((sum, subject) => sum + subject.marks, 0) /
-                  student.subjects.length
+                student.subjects.reduce(
+                  (sum, subject) => sum + subject.marks,
+                  0
+                ) / student.subjects.length
               )
             : "N/A"
         }
@@ -134,3 +147,26 @@ export const Achievements: React.FC<AchievementsProps> = ({ achievements }) => (
     </div>
   </div>
 );
+
+export const MotivationalQuote: React.FC = () => {
+  const [quote, setQuote] = useState("");
+
+  useEffect(() => {
+    const quotes = [
+      "Believe in yourself and all that you are.",
+      "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+      "Don't watch the clock; do what it does. Keep going.",
+      "The harder you work for something, the greater you'll feel when you achieve it.",
+    ];
+    setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+  }, []);
+
+  return (
+    <div className="backdrop-blur-md bg-white/5 border-2 border-yellow-400 rounded-3xl shadow-xl overflow-hidden p-4 text-center">
+      <h2 className="text-xl font-semibold text-white/90 mb-3">
+        Motivational Quote
+      </h2>
+      <p className="text-white italic">&quot;{quote}&quot;</p>
+    </div>
+  );
+};
